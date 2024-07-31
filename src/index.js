@@ -14,6 +14,6 @@ app.get("/test", function (req, res) {
   res.send({ status: "success", message: "Welcome, this is /test" });
 });
 
-const listener = app.listen(8080, function () {
-  console.log("Listening on port " + listener.address().port);
-});
+app.listen(3000, () => console.log("Server ready on port 3000."));
+
+module.exports = app;
