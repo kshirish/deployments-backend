@@ -6,8 +6,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", function (req, res) {
-  res.send("Welcome, this is /");
+app.get("/:id", function (req, res) {
+  res.send("Welcome, this is /" + req.params.id);
 });
 
 app.get("/test", function (req, res) {
