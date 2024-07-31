@@ -5,7 +5,13 @@ const api = express();
 
 const router = Router();
 
-router.get("/hello", (req, res) => res.send("Hello World!"));
+router.get("/test", function (req, res) {
+  res.send({ status: "success", message: "Welcome, this is /test" });
+});
+
+router.get("/:id", function (req, res) {
+  res.send("Welcome, this is /" + req.params.id);
+});
 
 api.use("/api/", router);
 
